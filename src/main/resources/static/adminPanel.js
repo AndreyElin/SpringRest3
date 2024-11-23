@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function (event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
     fetchCurrentUser();
     fetchUsers();
     loadRoles();
@@ -40,6 +39,7 @@ function fetchUsers() {
             console.log('Users fetched:', response);
             const tableBody = document.getElementById('users-table-body');
             tableBody.innerHTML = ''; // Очищаем существующие строки
+
             response.forEach(user => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -191,7 +191,7 @@ document.getElementById('editUserForm').addEventListener('submit', function (eve
 
                 closeModal('editUserModal');
 
-                window.location.href = '/admin';
+                //window.location.href = '/admin';
             } else {
                 return response.json().then(data => {
                     console.error('Ошибка обновления:', data);

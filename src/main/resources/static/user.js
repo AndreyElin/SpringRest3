@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-        event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
         // Запрашиваем данные о пользователе через API
         fetch("/user/profile_user")
             .then(response => response.json())
